@@ -21,8 +21,8 @@ public class IssuesPage extends BasePage {
     }
 
     public int amountOfIssues() {
-        int actualresult = listOfIssues.size();
-        return actualresult;
+        int actualResult = listOfIssues.size();
+        return actualResult;
     }
 
 }
