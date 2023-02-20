@@ -9,13 +9,6 @@ import org.openqa.selenium.WebElement;
 
 public class AvatarTest extends BaseTest {
 
-    public void test() {
-
-        WebElement usernameField = driver.findElement(By.id("login_field"));
-        usernameField.sendKeys("innachery");
-
-    }
-
     @DisplayName("Checking if the avatar is placed on the issue creation page")
     @Test
     public void checkAvatarOnCreationIssuePage() {
