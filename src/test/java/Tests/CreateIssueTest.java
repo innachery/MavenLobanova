@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class CreateIssueTest extends BaseTest {
-    @DisplayName("")
+    @DisplayName("Check if the issue has been created")
     @Test
     public void newIssueIsCreated() {
         LoginPage loginPage = new LoginPage(driver);
