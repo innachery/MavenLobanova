@@ -9,7 +9,7 @@ import java.util.List;
 public class IssuesPage extends BasePage {
     WebElement newIssueButton = driver.findElement(By.xpath("//a[@class=\"btn btn-primary\"]"));
 
-    List<WebElement> listOfIssues = driver.findElements(By.xpath("//input[@class=\"js-issues-list-check\"]"));
+    List<WebElement> listOfIssues = driver.findElements(By.xpath("//span[@class=\"opened-by\"]"));
 
     public IssuesPage(WebDriver driver) {
         super(driver);

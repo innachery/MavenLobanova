@@ -1,16 +1,14 @@
 package Tests;
 
 import Pages.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class CreateIssueTest extends BaseTest {
-    @DisplayName("")
-    @Test
+
+    @Test(description = "Checked the number of issues", priority = 2)
     public void newIssueIsCreated() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("***", "***");
         RepositoriesPage repositoriesPage = new RepositoriesPage(driver);
         repositoriesPage.goTProfileForm();
         ProfileForm profileForm = new ProfileForm(driver);
@@ -23,8 +21,9 @@ public class CreateIssueTest extends BaseTest {
         issuesPage.createIssue();
         CreationIssuePage creationIssuePage = new CreationIssuePage(driver);
         creationIssuePage.createIssue("Second", "My second issue");
-        int expectedResult = 8; // number of issues after the creation of the current
-        Assertions.assertEquals(expectedResult, issuesPage.amountOfIssues());
+        NewIssuePage newIssuePage = new NewIssuePage(driver);
+        newIssuePage.goToIssues();
+        Assert.assertEquals(issuesPage.amountOfIssues(), 4);
     }
 }
 

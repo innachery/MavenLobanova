@@ -1,26 +1,14 @@
 package Tests;
 
 import Pages.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class AvatarTest extends BaseTest {
 
-    public void test() {
 
-        WebElement usernameField = driver.findElement(By.id("login_field"));
-        usernameField.sendKeys("innachery");
-
-    }
-
-    @DisplayName("Checking if the avatar is placed on the issue creation page")
-    @Test
+    @Test(description = "Checking if the avatar is placed on the issue creation page", priority = 1)
     public void checkAvatarOnCreationIssuePage() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("***", "***");// enter a valid username and password
         RepositoriesPage repositoriesPage = new RepositoriesPage(driver);
         repositoriesPage.goTProfileForm();
         ProfileForm profileForm = new ProfileForm(driver);
@@ -32,6 +20,6 @@ public class AvatarTest extends BaseTest {
         IssuesPage issuesPage = new IssuesPage(driver);
         issuesPage.createIssue();
         CreationIssuePage creationIssuePage = new CreationIssuePage(driver);
-        Assertions.assertTrue(creationIssuePage.getAvatar().isDisplayed());
+        Assert.assertTrue(creationIssuePage.getAvatar().isDisplayed());
     }
 }

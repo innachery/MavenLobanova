@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="first-maven" />
+        <module name="IteaTestNG" />
+        <module name="IteaMaven" />
       </profile>
     </annotationProcessing>
   </component>
